@@ -229,5 +229,21 @@
 @media (max-width: 768px) {
   .layout {
     grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .formGrid,
+  .cardFields {
+    grid-template-columns: 1fr;
+  }
+
+  .formCard,
+  .summaryCard {
+    padding: 20px;
+  }
+
+  .title {
+    font-size: 1.75rem;
+    margin-bottom: 24px;
   }
 }

@@ -97,30 +97,30 @@ const mockedAccessories: Product[] = [
     id: 'acc-1',
     name: "Classic Leather Watch Box",
     price: 120.00,
-    image: "https://images.unsplash.com/photo-1596765738870-fbfaeb90dd47?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1523170335258-f5ed11844a49?auto=format&fit=crop&q=80&w=800",
     brand: "Pooja Exclusives",
     description: "Premium leather watch box accommodating up to 6 luxury timepieces.",
-    gallery: ["https://images.unsplash.com/photo-1596765738870-fbfaeb90dd47?auto=format&fit=crop&q=80&w=800"],
+    gallery: ["https://images.unsplash.com/photo-1523170335258-f5ed11844a49?auto=format&fit=crop&q=80&w=800"],
     specs: [{ label: 'Material', value: 'Genuine Leather' }, { label: 'Capacity', value: '6 Watches' }]
   },
   {
     id: 'acc-2',
     name: "Automatic Watch Winder",
     price: 350.00,
-    image: "https://images.unsplash.com/photo-1612817288484-934c264a66e6?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?auto=format&fit=crop&q=80&w=800",
     brand: "Horology Gear",
     description: "Silent motor automatic dual watch winder with piano black finish.",
-    gallery: ["https://images.unsplash.com/photo-1612817288484-934c264a66e6?auto=format&fit=crop&q=80&w=800"],
+    gallery: ["https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?auto=format&fit=crop&q=80&w=800"],
     specs: [{ label: 'Material', value: 'Wood & Glass' }, { label: 'Motors', value: '2 Independent' }]
   },
   {
     id: 'acc-3',
     name: "Vintage Calfskin Strap",
     price: 85.00,
-    image: "https://images.unsplash.com/photo-1508656919611-db9eb9018ca3?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1587613941400-019910d54a2a?auto=format&fit=crop&q=80&w=800",
     brand: "Pooja Exclusives",
     description: "Hand-stitched vintage calfskin leather strap, 20mm.",
-    gallery: ["https://images.unsplash.com/photo-1508656919611-db9eb9018ca3?auto=format&fit=crop&q=80&w=800"],
+    gallery: ["https://images.unsplash.com/photo-1587613941400-019910d54a2a?auto=format&fit=crop&q=80&w=800"],
     specs: [{ label: 'Material', value: 'Calfskin Leather' }, { label: 'Size', value: '20mm' }]
   },
   {
