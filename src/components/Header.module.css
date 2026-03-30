@@ -55,12 +55,6 @@
   background: var(--white);
 }
 
-@media (max-width: 768px) {
-  .logoBar {
-    display: none !important;
-  }
-}
-
 .logoBarInner {
   display: flex;
   align-items: center;
