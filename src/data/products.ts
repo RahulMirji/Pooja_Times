@@ -91,3 +91,74 @@ export const BRANDS = [
   'Jaeger-LeCoultre', 'Cartier', 'Omega', 
   'Blancpain', 'Piaget', 'Breguet'
 ];
+
+const mockedAccessories: Product[] = [
+  {
+    id: 'acc-1',
+    name: "Classic Leather Watch Box",
+    price: 120.00,
+    image: "https://images.unsplash.com/photo-1596765738870-fbfaeb90dd47?auto=format&fit=crop&q=80&w=800",
+    brand: "Pooja Exclusives",
+    description: "Premium leather watch box accommodating up to 6 luxury timepieces.",
+    gallery: ["https://images.unsplash.com/photo-1596765738870-fbfaeb90dd47?auto=format&fit=crop&q=80&w=800"],
+    specs: [{ label: 'Material', value: 'Genuine Leather' }, { label: 'Capacity', value: '6 Watches' }]
+  },
+  {
+    id: 'acc-2',
+    name: "Automatic Watch Winder",
+    price: 350.00,
+    image: "https://images.unsplash.com/photo-1612817288484-934c264a66e6?auto=format&fit=crop&q=80&w=800",
+    brand: "Horology Gear",
+    description: "Silent motor automatic dual watch winder with piano black finish.",
+    gallery: ["https://images.unsplash.com/photo-1612817288484-934c264a66e6?auto=format&fit=crop&q=80&w=800"],
+    specs: [{ label: 'Material', value: 'Wood & Glass' }, { label: 'Motors', value: '2 Independent' }]
+  },
+  {
+    id: 'acc-3',
+    name: "Vintage Calfskin Strap",
+    price: 85.00,
+    image: "https://images.unsplash.com/photo-1508656919611-db9eb9018ca3?auto=format&fit=crop&q=80&w=800",
+    brand: "Pooja Exclusives",
+    description: "Hand-stitched vintage calfskin leather strap, 20mm.",
+    gallery: ["https://images.unsplash.com/photo-1508656919611-db9eb9018ca3?auto=format&fit=crop&q=80&w=800"],
+    specs: [{ label: 'Material', value: 'Calfskin Leather' }, { label: 'Size', value: '20mm' }]
+  },
+  {
+    id: 'acc-4',
+    name: "Travel Watch Pouch",
+    price: 45.00,
+    image: "https://images.unsplash.com/photo-1524592094714-0f0654e20314?auto=format&fit=crop&q=80&w=800",
+    brand: "Horology Gear",
+    description: "Protective travel pouch crafted from soft suede.",
+    gallery: ["https://images.unsplash.com/photo-1524592094714-0f0654e20314?auto=format&fit=crop&q=80&w=800"],
+    specs: [{ label: 'Material', value: 'Suede' }, { label: 'Capacity', value: '1 Watch' }]
+  }
+];
+
+export async function getProductsByCategory(id: string): Promise<Product[]> {
+  try {
+    if (id === 'accessories') {
+      return mockedAccessories;
+    }
+    
+    // Fallback to DummyJSON for men and women
+    const endpoint = id === 'women' ? 'womens-watches' : id === 'men' ? 'mens-watches' : null;
+    
+    if (!endpoint) {
+      return [];
+    }
+
+    const res = await fetch(`https://dummyjson.com/products/category/${endpoint}`);
+    
+    if (!res.ok) {
+        return [];
+    }
+
+    const data = await res.json();
+    const items: DummyJSONProduct[] = data.products || [];
+    return items.map(mapDummyJSONToProduct);
+  } catch (error) {
+    console.error('Error fetching category products:', error);
+    return [];
+  }
+}

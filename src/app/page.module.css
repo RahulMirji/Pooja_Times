@@ -359,9 +359,30 @@
     gap: 12px;
   }
 
+  .categoryImage {
+    aspect-ratio: 5 / 7;
+  }
+
+  .newArrivals {
+    padding: 40px 0;
+  }
+
+  .brandsSection {
+    padding: 40px 0;
+  }
+
+  .sectionTitle {
+    margin-bottom: 24px;
+    font-size: 1.25rem;
+  }
+
   .productGrid {
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
+  }
+
+  .productImage {
+    aspect-ratio: 5 / 7;
   }
 
   .brandGrid {
@@ -369,6 +390,7 @@
   }
 
   .editorialImage {
-    height: 250px;
+    aspect-ratio: 5 / 7;
+    height: auto;
   }
 }

@@ -177,8 +177,17 @@
 }
 
 @media (max-width: 768px) {
+  .trustBar {
+    padding: 30px 0;
+  }
+
   .trustInner {
     grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .mainFooter {
+    padding: 40px 0;
   }
 
   .footerInner {

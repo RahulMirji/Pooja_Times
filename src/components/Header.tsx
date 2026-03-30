@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
 import { useCart } from '@/context/CartContext';
 import CartDrawer from './CartDrawer';
@@ -94,6 +95,10 @@ const MEGA_MENUS = {
 
 export default function Header() {
   const { totalItems, toggleCart } = useCart();
+  const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
+
+  const toggleMobileNav = () => setIsMobileNavOpen(!isMobileNavOpen);
+  const closeMobileNav = () => setIsMobileNavOpen(false);
 
   return (
     <>
@@ -137,6 +142,14 @@ export default function Header() {
         {/* Navigation Bar */}
         <nav className={styles.navBar}>
           <div className={`container ${styles.navInner}`}>
+            {/* Hamburger Button (Mobile Only) */}
+            <button className={styles.hamburgerBtn} onClick={toggleMobileNav} aria-label="Menu">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+              </svg>
+            </button>
             <div className={styles.navLinks}>
 
               {/* BRANDS WITH MEGA MENU */}
@@ -276,6 +289,67 @@ export default function Header() {
             </div>
           </div>
         </nav>
+
+        {/* Mobile Navigation Drawer */}
+        <div className={`${styles.mobileNavOverlay} ${isMobileNavOpen ? styles.mobileNavOverlayOpen : ''}`} onClick={closeMobileNav}></div>
+        <div className={`${styles.mobileNavDrawer} ${isMobileNavOpen ? styles.mobileNavDrawerOpen : ''}`}>
+          <div className={styles.mobileNavHeader}>
+            <span className={styles.mobileNavTitle}>Menu</span>
+            <button className={styles.closeMobileNavBtn} onClick={closeMobileNav} aria-label="Close Menu">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+          </div>
+          <div className={styles.mobileNavBody}>
+            <div className={styles.mobileAccordion}>
+              <details className={styles.mobileDetails}>
+                <summary className={styles.mobileSummary}>Brands <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></summary>
+                <div className={styles.mobileDetailsContent}>
+                  {MEGA_MENUS.brands.flatMap(section => section.items).map((item, idx) => (
+                    <Link href="/" key={`m-brand-${idx}`} onClick={closeMobileNav} className={styles.mobileSubLink}>{item}</Link>
+                  ))}
+                </div>
+              </details>
+
+              <details className={styles.mobileDetails}>
+                <summary className={styles.mobileSummary}>Collections <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></summary>
+                <div className={styles.mobileDetailsContent}>
+                  {MEGA_MENUS.collections.flatMap(section => section.items).map((item, idx) => (
+                    <Link href="/" key={`m-col-${idx}`} onClick={closeMobileNav} className={styles.mobileSubLink}>{item}</Link>
+                  ))}
+                </div>
+              </details>
+
+              <details className={styles.mobileDetails}>
+                <summary className={styles.mobileSummary}>Watch Finder <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></summary>
+                <div className={styles.mobileDetailsContent}>
+                  {MEGA_MENUS.watchFinder.flatMap(section => section.items).map((item, idx) => (
+                    <Link href="/" key={`m-wf-${idx}`} onClick={closeMobileNav} className={styles.mobileSubLink}>{item}</Link>
+                  ))}
+                </div>
+              </details>
+
+              <details className={styles.mobileDetails}>
+                <summary className={styles.mobileSummary}>Special Offer <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></summary>
+                <div className={styles.mobileDetailsContent}>
+                  {MEGA_MENUS.specialOffer.flatMap(section => section.items).map((item, idx) => (
+                    <Link href="/" key={`m-so-${idx}`} onClick={closeMobileNav} className={styles.mobileSubLink}>{item}</Link>
+                  ))}
+                </div>
+              </details>
+
+              <Link href="/" onClick={closeMobileNav} className={styles.mobileDirectLink}>Store Locator</Link>
+            </div>
+
+            <div className={styles.mobileNavBottom}>
+              <a href="tel:9169167676" className={styles.mobileContactItem}>Call: +91-9169167676</a>
+              <a href="mailto:Enquiry@poojatimes.com" className={styles.mobileContactItem}>Email: Enquiry@poojatimes.com</a>
+              <a href="https://wa.me/919111480111" className={styles.mobileContactItem} target="_blank" rel="noopener noreferrer">WhatsApp: 9111480111</a>
+            </div>
+          </div>
+        </div>
       </header>
       <CartDrawer />
     </>

@@ -20,7 +20,7 @@ export default async function Home() {
       {/* ===== CATEGORY CARDS ===== */}
       <section className={styles.categories}>
         <div className={`container ${styles.categoriesInner}`}>
-          <Link href="/" className={styles.categoryCard}>
+          <Link href="/category/men" className={styles.categoryCard}>
             <div className={styles.categoryImage}>
               <Image
                 src="/category-men.png"
@@ -35,7 +35,7 @@ export default async function Home() {
               <span className={styles.categoryArrow}>→</span>
             </div>
           </Link>
-          <Link href="/" className={styles.categoryCard}>
+          <Link href="/category/women" className={styles.categoryCard}>
             <div className={styles.categoryImage}>
               <Image
                 src="/category-women.png"
@@ -50,7 +50,7 @@ export default async function Home() {
               <span className={styles.categoryArrow}>→</span>
             </div>
           </Link>
-          <Link href="/" className={styles.categoryCard}>
+          <Link href="/category/accessories" className={styles.categoryCard}>
             <div className={styles.categoryImage}>
               <Image
                 src="/category-accessories.png"

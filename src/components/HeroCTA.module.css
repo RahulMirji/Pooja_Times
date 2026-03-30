@@ -86,17 +86,23 @@
     min-height: auto;
   }
 
+  .ctaTitle {
+    font-size: clamp(1.75rem, 5vw, 3.2rem);
+  }
+
   .ctaContent {
-    padding: 40px 24px;
+    padding: 30px 20px;
     text-align: center;
     align-items: center;
+    gap: 16px;
   }
 
   .ctaDesc {
     max-width: 100%;
+    font-size: 0.9rem;
   }
 
   .ctaImage {
-    height: 350px;
+    height: 280px;
   }
 }
