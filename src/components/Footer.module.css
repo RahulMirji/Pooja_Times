@@ -1,0 +1,188 @@
+/* ===== TRUST BADGES BAR ===== */
+.trustBar {
+  background: var(--gray-100);
+  padding: 40px 0;
+  border-top: 1px solid var(--gray-200);
+}
+
+.trustInner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.trustItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.trustIcon {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid var(--gray-300);
+  border-radius: 50%;
+  flex-shrink: 0;
+  color: var(--black);
+}
+
+.trustText h4 {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 2px;
+}
+
+.trustText p {
+  font-size: 0.78rem;
+  color: var(--gray-500);
+  line-height: 1.4;
+}
+
+/* ===== MAIN FOOTER ===== */
+.mainFooter {
+  background: var(--black);
+  color: var(--white);
+  padding: 60px 0;
+}
+
+.footer {
+  margin-top: 0;
+}
+
+.footerInner {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+  gap: 40px;
+}
+
+.footerCol h3 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.footerDesc {
+  font-size: 0.82rem;
+  color: var(--gray-400);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.form {
+  display: flex;
+  border: 1px solid var(--gray-700);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.input {
+  flex: 1;
+  padding: 10px 14px;
+  background: transparent;
+  color: var(--white);
+  font-size: 0.82rem;
+  border: none;
+}
+
+.input::placeholder {
+  color: var(--gray-600);
+}
+
+.subscribeBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  background: var(--white);
+  color: var(--black);
+  border: none;
+  cursor: pointer;
+  transition: opacity var(--transition-fast);
+}
+
+.subscribeBtn:hover {
+  opacity: 0.8;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.socialLinks a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--gray-700);
+  border-radius: 50%;
+  color: var(--gray-400);
+  transition: all var(--transition-fast);
+}
+
+.socialLinks a:hover {
+  color: var(--white);
+  border-color: var(--white);
+}
+
+.linkList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.linkList a {
+  color: var(--gray-400);
+  font-size: 0.82rem;
+  transition: color var(--transition-fast);
+}
+
+.linkList a:hover {
+  color: var(--white);
+}
+
+/* ===== COPYRIGHT ===== */
+.copyright {
+  background: var(--gray-900);
+  padding: 16px 0;
+  text-align: center;
+  border-top: 1px solid var(--gray-800);
+}
+
+.copyright p {
+  color: var(--gray-500);
+  font-size: 0.75rem;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .trustInner {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footerInner {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .trustInner {
+    grid-template-columns: 1fr;
+  }
+
+  .footerInner {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}

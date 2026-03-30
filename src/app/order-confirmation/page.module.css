@@ -1,0 +1,179 @@
+.page {
+  padding-top: 48px;
+  padding-bottom: 60px;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.card {
+  max-width: 600px;
+  width: 100%;
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  padding: 48px 40px;
+  text-align: center;
+  animation: fadeIn 0.4s ease;
+}
+
+.iconWrap {
+  width: 80px;
+  height: 80px;
+  border-radius: var(--radius-full);
+  background: rgba(34, 197, 94, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+}
+
+.card h1 {
+  font-size: 1.75rem;
+  margin-bottom: 8px;
+  font-family: var(--font-serif);
+}
+
+.subtitle {
+  color: var(--gray-500);
+  font-size: 0.95rem;
+  margin-bottom: 32px;
+}
+
+.orderInfo {
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  margin-bottom: 28px;
+}
+
+.infoRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  font-size: 0.85rem;
+}
+
+.infoRow:not(:last-child) {
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.label {
+  color: var(--gray-500);
+}
+
+.value {
+  font-weight: 600;
+}
+
+/* Items */
+.items {
+  text-align: left;
+  margin-bottom: 24px;
+}
+
+.items h3 {
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+}
+
+.itemRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.itemDot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background: var(--black);
+  flex-shrink: 0;
+}
+
+.itemName {
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.itemBrand {
+  font-size: 0.75rem;
+  color: var(--gray-500);
+}
+
+.itemPrice {
+  margin-left: auto;
+  font-weight: 700;
+  color: var(--black);
+  font-size: 0.9rem;
+}
+
+/* Summary */
+.summary {
+  text-align: left;
+  margin-bottom: 24px;
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  font-size: 0.85rem;
+  color: var(--gray-500);
+}
+
+.summaryTotal {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--black);
+  padding-top: 12px;
+  border-top: 1px solid var(--gray-200);
+}
+
+/* Shipping */
+.shipping {
+  text-align: left;
+  margin-bottom: 32px;
+  padding: 16px;
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+}
+
+.shipping h3 {
+  font-size: 0.85rem;
+  margin-bottom: 8px;
+  color: var(--black);
+}
+
+.shipping p {
+  font-size: 0.9rem;
+}
+
+.shippingAddr {
+  color: var(--gray-500);
+  font-size: 0.85rem;
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.continueLink {
+  font-size: 0.85rem;
+  color: var(--gray-500);
+  font-weight: 600;
+  transition: color var(--transition-fast);
+}
+
+.continueLink:hover {
+  color: var(--black);
+}

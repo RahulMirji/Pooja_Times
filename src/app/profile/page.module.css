@@ -1,0 +1,246 @@
+.page {
+  padding-top: calc(var(--header-height) + 24px);
+  padding-bottom: 60px;
+  min-height: 100vh;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 32px;
+}
+
+/* Sidebar */
+.sidebar {
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  position: sticky;
+  top: calc(var(--header-height) + 24px);
+  height: fit-content;
+}
+
+.sidebarHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--gray-200);
+  margin-bottom: 16px;
+}
+
+.avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  background: var(--black);
+  color: var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.sidebarName {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.sidebarEmail {
+  font-size: 0.75rem;
+  color: var(--gray-500);
+}
+
+.sidebarNav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.navItem, .navActive {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--gray-400);
+  transition: all var(--transition-fast);
+}
+
+.navItem:hover {
+  color: var(--black);
+  background: var(--gray-100);
+}
+
+.navActive {
+  color: var(--black);
+  background: rgba(212, 175, 55, 0.1);
+}
+
+/* Main */
+.main h1 {
+  font-size: 2rem;
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  color: var(--gray-500);
+  margin-bottom: 32px;
+}
+
+.dashboardGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.dashCard {
+  padding: 24px;
+}
+
+.fullWidth {
+  grid-column: 1 / -1;
+}
+
+.dashHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.dashHeader h3 {
+  font-size: 1rem;
+}
+
+.viewLink {
+  font-size: 0.8rem;
+  color: var(--black);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Order Card */
+.orderCard {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.orderTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.orderId {
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.orderDate {
+  font-size: 0.75rem;
+  color: var(--gray-500);
+}
+
+.statusBadge {
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  background: rgba(34, 197, 94, 0.15);
+  color: #22c55e;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.progressBar {
+  height: 4px;
+  background: var(--gray-200);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(to right, var(--black), var(--gray-700));
+  border-radius: var(--radius-full);
+  transition: width var(--transition-slow);
+}
+
+.orderItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.orderItemName {
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.orderItemBrand {
+  font-size: 0.7rem;
+  color: var(--gray-500);
+}
+
+.orderItemPrice {
+  margin-left: auto;
+  font-weight: 700;
+  color: var(--black);
+}
+
+/* Wishlist */
+.wishlistGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.wishlistItem {
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background: var(--black);
+}
+
+/* Profile Details */
+.profileDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.detailRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--gray-200);
+  font-size: 0.9rem;
+}
+
+.detailRow:last-child {
+  border-bottom: none;
+}
+
+.detailLabel {
+  color: var(--gray-500);
+}
+
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: static;
+  }
+
+  .dashboardGrid {
+    grid-template-columns: 1fr;
+  }
+}

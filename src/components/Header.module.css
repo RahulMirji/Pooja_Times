@@ -1,0 +1,313 @@
+/* ===== HEADER CONTAINER ===== */
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: var(--white);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+/* ===== TOP CONTACT BAR ===== */
+.topBar {
+  background: var(--white);
+  border-bottom: 1px solid var(--gray-200);
+  padding: 8px 0;
+}
+
+.topBarInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contactLinks {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: var(--gray-700);
+  transition: color var(--transition-fast);
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.contactItem:hover {
+  color: var(--black);
+}
+
+.topBarRight {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* ===== LOGO BAR ===== */
+.logoBar {
+  padding: 16px 0;
+  background: var(--white);
+}
+
+.logoBarInner {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+}
+
+.logoName {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--black);
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+
+.logoTagline {
+  font-size: 0.7rem;
+  color: var(--gray-500);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+/* ===== NAV BAR ===== */
+.navBar {
+  background: var(--black);
+  padding: 0;
+  position: relative;
+  /* For absolutely positioning the mega menu */
+}
+
+.navInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+}
+
+.navLinks {
+  display: flex;
+  align-items: stretch;
+  /* Stretch to fill nav height for hover areas */
+  gap: 36px;
+  height: 100%;
+}
+
+.navItem {
+  position: static;
+  /* Let the dropdown be relative to navBar */
+  display: flex;
+  align-items: center;
+}
+
+.navLink {
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+  gap: 5px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--white);
+  transition: opacity var(--transition-fast);
+  position: relative;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.navLink:hover {
+  opacity: 0.75;
+}
+
+.navLink svg {
+  opacity: 0.7;
+  transition: transform 0.2s ease;
+}
+
+.navItem:hover .navLink svg {
+  transform: rotate(180deg);
+}
+
+/* ===== MEGA MENU ===== */
+.megaMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: var(--white);
+  border-top: 2px solid var(--gray-200);
+  border-bottom: 1px solid var(--gray-200);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(5px);
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  z-index: -1;
+  padding: 40px 0 50px 0;
+}
+
+.navItem:hover .megaMenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  z-index: 99;
+}
+
+.megaMenuInner {
+  display: flex;
+  gap: 80px;
+}
+
+/* Menu Column */
+.menuColumn {
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+}
+
+.menuTitle {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.menuList {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.menuList.multiColumn {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px 40px;
+  width: max-content;
+}
+
+.menuItem {
+  font-size: 0.85rem;
+  color: var(--gray-600);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  line-height: 1.4;
+}
+
+.menuItem:hover {
+  color: var(--black);
+}
+
+/* ===== NAV ACTIONS ===== */
+.navActions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.iconBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  color: var(--white);
+  transition: all var(--transition-fast);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.iconBtn:hover {
+  opacity: 0.7;
+}
+
+.cartBtn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  color: var(--white);
+  transition: all var(--transition-fast);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.cartBtn:hover {
+  opacity: 0.7;
+}
+
+.cartBadge {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  min-width: 18px;
+  height: 18px;
+  background: var(--white);
+  color: var(--black);
+  font-size: 0.6rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  padding: 0 4px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .navLinks {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .topBar {
+    display: none;
+  }
+
+  .navLinks {
+    gap: 16px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .navLinks::-webkit-scrollbar {
+    display: none;
+  }
+
+  .navLink {
+    white-space: nowrap;
+    font-size: 0.7rem;
+  }
+
+  .logoName {
+    font-size: 1.4rem;
+  }
+
+  /* Disable hover mega menus on mobile for now, usually needs a drawer UI */
+  .megaMenu {
+    display: none !important;
+  }
+}
